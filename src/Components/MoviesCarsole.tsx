@@ -52,7 +52,13 @@ export default function AIToolsCarousel() {
     loaded && instanceRef.current
       ? currentSlide >=
         instanceRef.current.track.details.slides.length -
-          Math.ceil(instanceRef.current.options.slides?.perView || 1)
+          Math.ceil(
+            typeof instanceRef.current.options.slides === "object" &&
+            instanceRef.current.options.slides !== null &&
+            "perView" in instanceRef.current.options.slides
+              ? (instanceRef.current.options.slides as { perView?: number }).perView || 1
+              : 1
+          )
       : false;
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Play } from 'lucide-react';
 
 
@@ -125,6 +125,7 @@ export default function App() {
 }
 
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const sectionHeader = () => (
   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-12">
     {/* Title */}
